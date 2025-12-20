@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ movie.title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        video {
+            width: 80%;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        a.back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 8px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ movie.title }}</h1>
+    {% if movie.movie_url %}
+    <video controls>
+        <source src="{{ url_for('static', filename=movie.movie_url) }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    {% else %}
+    <p>Video not available for this movie.</p>
+    {% endif %}
+    <br>
+    <a class="back-btn" href="{{ url_for('movies_page') }}">Back to Movies</a>
+</body>
+</html>

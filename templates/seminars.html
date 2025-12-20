@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librify - Seminars in Egypt</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo-text">
+            <span>L</span><span>i</span><span>b</span><span>r</span><span>i</span><span>f</span><span>y</span>
+        </div>
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('categories') }}">Categories</a>
+            <a href="{{ url_for('seminars') }}">Seminars</a>
+        </div>
+    </nav>
+
+    <!-- Seminars Section -->
+    <section class="seminars-section">
+        <h2>📖 Seminars in Egypt</h2>
+        <p>Check out fun, reading, and interesting seminars happening across Egypt!</p>
+
+        <div class="seminars-container">
+
+            <div class="seminar-card">
+                <img src="{{ url_for('static', filename='photoseminar/photo1.jpeg.jpg') }}" alt="DPIE Event" class="seminar-img">
+                <div class="seminar-info">
+                    <h3>DPIE Tech Talk</h3>
+                    <p>Date: 25 November 2025</p>
+                    <p>Location: Cairo Expo Center</p>
+                    <p class="seminar-overview">Explore innovative tech projects and network with Egyptian tech enthusiasts.</p>
+                    <a href="#" class="register-btn">Register Now</a>
+                </div>
+            </div>
+
+            <div class="seminar-card">
+                <img src="{{ url_for('static', filename='photoseminar/photo2.jpeg.jpg') }}" alt="Huawei Event" class="seminar-img">
+                <div class="seminar-info">
+                    <h3>Huawei Tech Experience</h3>
+                    <p>Date: 2 December 2025</p>
+                    <p>Location: Smart Village, Cairo</p>
+                    <p class="seminar-overview">Hands-on workshops and demos showcasing Huawei's latest tech.</p>
+                    <a href="#" class="register-btn">Register Now</a>
+                </div>
+            </div>
+
+            <div class="seminar-card">
+                <img src="{{ url_for('static', filename='photoseminar/photo3.jpeg.jpg') }}" alt="Audo Event" class="seminar-img">
+                <div class="seminar-info">
+                    <h3>Audo Music & Innovation</h3>
+                    <p>Date: 5 December 2025</p>
+                    <p>Location: Downtown Cairo</p>
+                    <p class="seminar-overview">Experience music tech and creative audio workshops in a fun environment.</p>
+                    <a href="#" class="register-btn">Register Now</a>
+                </div>
+            </div>
+
+            <div class="seminar-card">
+                <img src="{{ url_for('static', filename='photoseminar/photo4.jpeg.jpg') }}" alt="Reading Meetup" class="seminar-img">
+                <div class="seminar-info">
+                    <h3>Alexandria Library Reading Meetup</h3>
+                    <p>Date: 8 December 2025</p>
+                    <p>Location: Bibliotheca Alexandrina</p>
+                    <p class="seminar-overview">Join fellow readers for book discussions and storytelling sessions.</p>
+                    <a href="#" class="register-btn">Register Now</a>
+                </div>
+            </div>
+
+            <div class="seminar-card">
+                <img src="{{ url_for('static', filename='photoseminar/photo5.jpeg.jpg') }}" alt="Creative Writing" class="seminar-img">
+                <div class="seminar-info">
+                    <h3>Creative Writing Workshop</h3>
+                    <p>Date: 10 December 2025</p>
+                    <p>Location: Cairo Cultural Center</p>
+                    <p class="seminar-overview">Learn to write stories and poems with guidance from experienced writers.</p>
+                    <a href="#" class="register-btn">Register Now</a>
+                </div>
+            </div>
+
+            <div class="seminar-card">
+                <img src="{{ url_for('static', filename='photoseminar/photo6.jpeg.jpg') }}" alt="Board Games Night" class="seminar-img">
+                <div class="seminar-info">
+                    <h3>Board Games & Fun Night</h3>
+                    <p>Date: 12 December 2025</p>
+                    <p>Location: Zamalek Café Lounge</p>
+                    <p class="seminar-overview">Play board games, meet new people, and enjoy a relaxed evening in Cairo.</p>
+                    <a href="#" class="register-btn">Register Now</a>
+                </div>
+            </div>
+
+            <div class="seminar-card">
+                <img src="{{ url_for('static', filename='photoseminar/photo7.jpeg.jpg') }}" alt="Poetry Evening" class="seminar-img">
+                <div class="seminar-info">
+                    <h3>Poetry Reading Evening</h3>
+                    <p>Date: 15 December 2025</p>
+                    <p>Location: Downtown Cairo Cultural Hall</p>
+                    <p class="seminar-overview">Enjoy readings from contemporary Egyptian poets and interact with the authors.</p>
+                    <a href="#" class="register-btn">Register Now</a>
+                </div>
+            </div>
+
+            <div class="seminar-card">
+                <img src="{{ url_for('static', filename='photoseminar/photo8.jpeg.jpg') }}" alt="Art Expo" class="seminar-img">
+                <div class="seminar-info">
+                    <h3>Art & Illustration Expo</h3>
+                    <p>Date: 20 December 2025</p>
+                    <p>Location: Cairo Opera House</p>
+                    <p class="seminar-overview">Explore exhibitions by local artists and illustrators, enjoy interactive sessions.</p>
+                    <a href="#" class="register-btn">Register Now</a>
+                </div>
+            </div>
+
+            <div class="seminar-card">
+                <img src="{{ url_for('static', filename='photoseminar/photo9.jpeg.jpg') }}" alt="Local Authors" class="seminar-img">
+                <div class="seminar-info">
+                    <h3>Local Authors Meetup</h3>
+                    <p>Date: 22 December 2025</p>
+                    <p>Location: Bibliotheca Alexandrina</p>
+                    <p class="seminar-overview">Meet Egyptian authors, discuss their latest books, and participate in Q&A.</p>
+                    <a href="#" class="register-btn">Register Now</a>
+                </div>
+            </div>
+
+            <div class="seminar-card">
+                <img src="{{ url_for('static', filename='photoseminar/photo10.jpeg.jpg') }}" alt="Film Discussion" class="seminar-img">
+                <div class="seminar-info">
+                    <h3>Film Discussion Night</h3>
+                    <p>Date: 28 December 2025</p>
+                    <p>Location: Cairo Film House</p>
+                    <p class="seminar-overview">Watch short films and participate in discussions about Egyptian cinema.</p>
+                    <a href="#" class="register-btn">Register Now</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="sub">
+        &copy; 2025 Librify. All rights reserved.
+    </div>
+
+</body>
+</html>

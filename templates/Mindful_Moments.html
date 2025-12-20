@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindful Moments _ Podcasts</title>
+  
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+            <h1 class="logo-text">
+                <span>L</span><span>I</span><span>B</span><span>R</span><span>I</span><span>F</span><span>Y</span>
+            </h1>
+        </div>
+        <div class="nav-links">
+            <a href="project.html">Home</a>
+            <!-- <a href="login.html">Login</a> -->
+            <a href="categories.html">Categories</a>
+        </div>
+    </header>
+    <section class="books-section">
+        <h2>Mindful Moments</h2>
+        <br><br><br>
+        <div class="seminars-container">
+            <div class="seminar-card">
+                 <img src="{{ url_for('static', filename='img/podcasts/Mindful_Moments.jpg') }}" class="seminar-img">
+                <div class="seminar-info">
+                    <h3>🎧 Mindful Moments with David Larbi.</h3>
+                    <p>Don’t Take It To Heart if You’re Bad At The Start!</p>
+                    <br>
+                    <audio controls>
+                        <source
+                             src="{{ url_for('static', filename='audios/audio2/mindful.mp3') }}">
+                    </audio>
+                </div>
+            </div>
+            <div class="interaction-buttons">
+                <button class="likeBtn">Like ❤</button>
+                <button class="commentBtn">Comment 💬</button>
+                <button class="favBtn">Add to Favorites ⭐</button>
+                <button class="playlistBtn">Add to Playlist 🎵</button>
+            </div>
+            <div class="tech">
+                <h2>Summary</h2>
+                <p>In this episode, David Larbi explores the challenges of starting something new and feeling unskilled.
+                    He explains that early struggles are natural, and giving ourselves space and patience is key to
+                    growth.</p>
+                <h3>Key Highlights: </h3>
+                <p>• It’s normal to feel “bad” at the start—everyone begins as a work in progress.</p>
+                <p>• Starting is more valuable than perfect intentions left unacted.</p>
+                <p>• Enjoy small signs of progress; they reflect your effort and desire to improve.</p>
+                <p>• Giving yourself leeway and having fun now builds confidence and long-term growth.</p>
+                <h3>Main Message: </h3>
+                <p>Early struggles are part of the journey—embracing them with patience and self-kindness allows true
+                    progress to happen.</p>
+            </div>
+    </section>
+    <div class="sub">
+        &copy; 2025 Librify. All rights reserved.
+    </div>
+   <script src="{{ url_for('static', filename='js/podcasts.js') }}"></script>
+</body>
+
+</html>

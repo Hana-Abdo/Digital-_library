@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Books - Librify</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <style>
+    .search-box {
+      width: 100%;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .search-box input {
+      width: 60%;
+      padding: 12px;
+      border: 2px solid #555;
+      border-radius: 12px;
+      font-size: 16px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .search-box input:focus {
+      border-color: #8b5cf6;
+      box-shadow: 0 0 8px #8b5cf6;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="logo-text">
+      <span>L</span><span>i</span><span>b</span><span>r</span><span>i</span><span>f</span><span>y</span>
+    </div>
+    <div class="nav-links">
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('categories') }}">Categories</a>
+    </div>
+  </nav>
+
+  <section class="books-section">
+    <h2>Our Books</h2>
+    <p>Here are the top selected books available in Librify.</p>
+
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search for a book or author...">
+    </div>
+
+    <div class="books-grid">
+
+      <!-- Book 1 -->
+      <div class="book-card" data-id="1">
+        <a href="{{ url_for('static', filename='pdf/Harry Potter&The Half blood prince.pdf') }}" target="_blank">
+          <img src="{{ url_for('static', filename='img/img/img1/book1.jpeg.jpg') }}">
+        </a>
+        <h3>Harry Potter and the Half-Blood Prince</h3>
+        <p>J.K. Rowling</p>
+        <span class="rating">⭐⭐⭐⭐⭐</span>
+        <div class="interaction-buttons">
+          <button class="likeBtn">Like</button>
+          <button class="commentBtn">Comment 💬</button>
+          <button class="favBtn">Add to Favorites ⭐</button>
+          <button class="playlistBtn">Add to Playlist 🎵</button>
+        </div>
+      </div>
+
+      <!-- Book 2 -->
+      <div class="book-card" data-id="2">
+        <a href="{{ url_for('static', filename='pdf/Harry Potter&The order of the phoenix.pdf') }}" target="_blank">
+          <img src="{{ url_for('static', filename='img/img/img1/book2.jpeg.jpg') }}">
+        </a>
+        <h3>Harry Potter and the Order of the Phoenix</h3>
+        <p>J.K. Rowling</p>
+        <span class="rating">⭐⭐⭐⭐⭐</span>
+        <div class="interaction-buttons">
+          <button class="likeBtn">Like</button>
+          <button class="commentBtn">Comment 💬</button>
+          <button class="favBtn">Add to Favorites ⭐</button>
+          <button class="playlistBtn">Add to Playlist 🎵</button>
+        </div>
+      </div>
+
+      <!-- Book 3 -->
+      <div class="book-card" data-id="3">
+        <a href="{{ url_for('static', filename='pdf/Harry potter&the chamber of secrets.pdf') }}" target="_blank">
+          <img src="{{ url_for('static', filename='img/img/img1/book3.jpeg.jpg') }}">
+        </a>
+        <h3>Harry Potter and the Chamber of Secrets</h3>
+        <p>J.K. Rowling</p>
+        <span class="rating">⭐⭐⭐⭐⭐</span>
+        <div class="interaction-buttons">
+          <button class="likeBtn">Like</button>
+          <button class="commentBtn">Comment 💬</button>
+          <button class="favBtn">Add to Favorites ⭐</button>
+          <button class="playlistBtn">Add to Playlist 🎵</button>
+        </div>
+      </div>
+
+      <!-- Book 4 -->
+      <div class="book-card" data-id="4">
+        <a href="{{ url_for('static', filename='pdf/Harry potter& the prisonar of the azkban.pdf') }}" target="_blank">
+          <img src="{{ url_for('static', filename='img/img/img1/book4.jpeg.jpg') }}">
+        </a>
+        <h3>Harry Potter and the Prisoner of Azkaban</h3>
+        <p>J.K. Rowling</p>
+        <span class="rating">⭐⭐⭐⭐⭐</span>
+        <div class="interaction-buttons">
+          <button class="likeBtn">Like</button>
+          <button class="commentBtn">Comment 💬</button>
+          <button class="favBtn">Add to Favorites ⭐</button>
+          <button class="playlistBtn">Add to Playlist 🎵</button>
+        </div>
+      </div>
+
+      <!-- Book 5 -->
+      <div class="book-card" data-id="5">
+        <a href="{{ url_for('static', filename='pdf/harry-potter-the-complete-collection_compress.pdf') }}" target="_blank">
+          <img src="{{ url_for('static', filename='img/img/img1/book5.jpeg.jpg') }}">
+        </a>
+        <h3>Harry Potter Boxed Set (Books 1-5)</h3>
+        <p>J.K. Rowling</p>
+        <span class="rating">⭐⭐⭐⭐</span>
+        <div class="interaction-buttons">
+          <button class="likeBtn">Like</button>
+          <button class="commentBtn">Comment 💬</button>
+          <button class="favBtn">Add to Favorites ⭐</button>
+          <button class="playlistBtn">Add to Playlist 🎵</button>
+        </div>
+      </div>
+
+      <!-- Book 6 -->
+      <div class="book-card" data-id="6">
+        <a href="{{ url_for('static', filename='pdf/Harry Potter and the Goblet of Fire.pdf') }}" target="_blank">
+          <img src="{{ url_for('static', filename='img/img/img1/book6.jpeg.jpg') }}">
+        </a>
+        <h3>Harry Potter Collection (Books 1-6)</h3>
+        <p>J.K. Rowling</p>
+        <span class="rating">⭐⭐⭐⭐⭐</span>
+        <div class="interaction-buttons">
+          <button class="likeBtn">Like</button>
+          <button class="commentBtn">Comment 💬</button>
+          <button class="favBtn">Add to Favorites ⭐</button>
+          <button class="playlistBtn">Add to Playlist 🎵</button>
+        </div>
+      </div>
+
+      <!-- Book 7 -->
+      <div class="book-card" data-id="7">
+        <a href="{{ url_for('static', filename='pdf/pride&prejudice.pdf') }}" target="_blank">
+          <img src="{{ url_for('static', filename='img/img/img1/book7.jpeg.jpg') }}">
+        </a>
+        <h3>Unauthorized Harry Potter Book Seven News</h3>
+        <p>W. Fredericks</p>
+        <span class="rating">⭐⭐⭐</span>
+        <div class="interaction-buttons">
+          <button class="likeBtn">Like</button>
+          <button class="commentBtn">Comment 💬</button>
+          <button class="favBtn">Add to Favorites ⭐</button>
+          <button class="playlistBtn">Add to Playlist 🎵</button>
+        </div>
+      </div>
+
+      <!-- Book 8 -->
+      <div class="book-card" data-id="8">
+        <a href="{{ url_for('static', filename='pdf/ultimate hitchhikers guide.pdf') }}" target="_blank">
+          <img src="{{ url_for('static', filename='img/img/img1/book8.jpeg.jpg') }}">
+        </a>
+        <h3>The Ultimate Hitchhiker's Guide</h3>
+        <p>Douglas Adams</p>
+        <span class="rating">⭐⭐⭐⭐</span>
+        <div class="interaction-buttons">
+          <button class="likeBtn">Like</button>
+          <button class="commentBtn">Comment 💬</button>
+          <button class="favBtn">Add to Favorites ⭐</button>
+          <button class="playlistBtn">Add to Playlist 🎵</button>
+        </div>
+      </div>
+
+      <!-- Book 9 -->
+      <div class="book-card" data-id="9">
+        <a href="{{ url_for('static', filename='pdf/ulimated hitchhikers guide to galaxy.pdf') }}" target="_blank">
+          <img src="{{ url_for('static', filename='img/img/img1/book9.jpeg.jpg') }}">
+        </a>
+        <h3>The Hitchhiker's Guide to the Galaxy</h3>
+        <p>Douglas Adams</p>
+        <span class="rating">⭐⭐⭐⭐⭐</span>
+        <div class="interaction-buttons">
+          <button class="likeBtn">Like</button>
+          <button class="commentBtn">Comment 💬</button>
+          <button class="favBtn">Add to Favorites ⭐</button>
+          <button class="playlistBtn">Add to Playlist 🎵</button>
+        </div>
+      </div>
+
+      <!-- Book 10 -->
+      <div class="book-card" data-id="10">
+        <a href="{{ url_for('static', filename='pdf/Elements-of-Style.pdf') }}" target="_blank">
+          <img src="{{ url_for('static', filename='img/img/img1/book10.jpeg.jpg') }}">
+        </a>
+        <h3>The Ultimate Hitchhiker's Guide (5 Novels + 1 Story)</h3>
+        <p>Douglas Adams</p>
+        <span class="rating">⭐⭐⭐⭐</span>
+        <div class="interaction-buttons">
+          <button class="likeBtn">Like</button>
+          <button class="commentBtn">Comment 💬</button>
+          <button class="favBtn">Add to Favorites ⭐</button>
+          <button class="playlistBtn">Add to Playlist 🎵</button>
+        </div>
+      </div>
+
+      <!-- Book 11 -->
+      <div class="book-card" data-id="11">
+        <a href="{{ url_for('static', filename='pdf/short history of nearly everything.pdf') }}" target="_blank">
+          <img src="{{ url_for('static', filename='img/img/img1/book11.jpeg.jpg') }}">
+        </a>
+        <h3>A Short History of Nearly Everything</h3>
+        <p>Bill Bryson</p>
+        <span class="rating">⭐⭐⭐⭐⭐</span>
+        <div class="interaction-buttons">
+          <button class="likeBtn">Like</button>
+          <button class="commentBtn">Comment 💬</button>
+          <button class="favBtn">Add to Favorites ⭐</button>
+          <button class="playlistBtn">Add to Playlist 🎵</button>
+        </div>
+      </div>
+
+      <!-- Book 12 -->
+      <div class="book-card" data-id="12">
+        <a href="{{ url_for('static', filename='pdf/ billbrysonsafrican.pdf') }}" target="_blank">
+          <img src="{{ url_for('static', filename='img/img/img1/book12.jpeg.jpg') }}">
+        </a>
+        <h3>Bill Bryson's African Diary</h3>
+        <p>Bill Bryson</p>
+        <span class="rating">⭐⭐⭐</span>
+        <div class="interaction-buttons">
+          <button class="likeBtn">Like</button>
+          <button class="commentBtn">Comment 💬</button>
+          <button class="favBtn">Add to Favorites ⭐</button>
+          <button class="playlistBtn">Add to Playlist 🎵</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="sub">&copy; 2025 Librify. All rights reserved.</div>
+
+  <script>
+    const searchInput = document.getElementById("searchInput");
+    const books = document.querySelectorAll(".book-card");
+
+    searchInput.addEventListener("input", () => {
+      const value = searchInput.value.toLowerCase();
+      books.forEach(book => {
+        const title = book.querySelector("h3").textContent.toLowerCase();
+        const author = book.querySelector("p").textContent.toLowerCase();
+        book.style.display = (title.includes(value) || author.includes(value)) ? "block" : "none";
+      });
+    });
+
+   document.querySelectorAll(".interaction-buttons").forEach(section => {
+
+  const likeBtn = section.querySelector(".likeBtn");
+  const favBtn = section.querySelector(".favBtn");
+  const playlistBtn = section.querySelector(".playlistBtn");
+  const commentBtn = section.querySelector(".commentBtn");
+
+  const bookId = section.dataset.id || null; 
+
+  likeBtn.addEventListener("click", () => {
+    likeBtn.classList.toggle("liked");
+    likeBtn.textContent =
+      likeBtn.textContent.includes("Like") ? "Liked ❤" : "Like ❤";
+
+    if (bookId) {
+      fetch("/like", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({ book_id: bookId })
+      });
+    }
+  });
+
+  favBtn.addEventListener("click", () => {
+    favBtn.classList.toggle("favorited");
+    favBtn.textContent =
+      favBtn.textContent.includes("Add") ? "Favorited ⭐" : "Add to Favorites ⭐";
+
+    if (bookId) {
+      fetch("/favorite", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({ book_id: bookId })
+      });
+    }
+  });
+
+  playlistBtn.addEventListener("click", () => {
+    let name = prompt("Enter playlist name:");
+    if (name) {
+      alert(`Added to playlist: ${name}`);
+
+      if (bookId) {
+        fetch("/playlist", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({ book_id: bookId, playlist: name })
+        });
+      }
+    }
+  });
+
+  commentBtn.addEventListener("click", () => {
+    let comment = prompt("Write your comment:");
+    if (comment) {
+      alert(`Comment added: ${comment}`);
+
+      if (bookId) {
+        fetch("/comment", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({ book_id: bookId, comment })
+        });
+      }
+    }
+  });
+
+});
+
+  </script>
+
+</body>
+</html>

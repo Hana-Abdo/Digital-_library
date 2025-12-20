@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future World _ Podcasts</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+            <h1 class="logo-text">
+                <span>L</span><span>I</span><span>B</span><span>R</span><span>I</span><span>F</span><span>Y</span>
+            </h1>
+        </div>
+        <div class="nav-links">
+            <a href="project.html">Home</a>
+            <!-- <a href="login.html">Login</a> -->
+            <a href="categories.html">Categories</a>
+        </div>
+    </header>
+    <section class="books-section">
+        <h2>Future World</h2>
+        <br><br><br>
+        <div class="seminars-container">
+            <div class="seminar-card">
+               <img src="{{ url_for('static', filename='img/podcasts/Future_World.jpg') }}" class="seminar-img">
+                <div class="seminar-info">
+                    <h3>🎧 Future World</h3>
+                    <p>Getting the Most From Our Extra 30 Years</p>
+                    <br>
+                    <audio controls>
+                        <source
+                            src="{{ url_for('static', filename='audios/audio2/future.mp3') }}">
+                    </audio>
+                </div>
+            </div>
+            <div class="interaction-buttons">
+                <button class="likeBtn">Like ❤</button>
+                <button class="commentBtn">Comment 💬</button>
+                <button class="favBtn">Add to Favorites ⭐</button>
+                <button class="playlistBtn">Add to Playlist 🎵</button>
+            </div>
+            <div class="tech">
+                <h2>Summary</h2>
+                <p>In this episode, we explore the remarkable longevity revolution that has been unfolding for more than
+                    a century. Since the early 1900s, average life expectancy has increased by over 25 years — a
+                    transformation unlike anything in human history. We dive into what these “extra decades” mean for
+                    our health, work, purpose, and the future of aging.</p>
+                <h3>Key Highlights: </h3>
+                <p>• How advances in medicine, technology, and public health have dramatically extended human life.</p>
+                <p>• The opportunities and challenges of living 30+ years longer than previous generations.</p>
+                <p>• What longer life means for careers, retirement, and personal fulfillment.</p>
+                <p>• Strategies for making these extra decades healthier, more meaningful, and more intentional.</p>
+                <h3>Main Message: </h3>
+                <p>Longevity isn’t just about living longer — it’s about living better. With an extra 30 years added to
+                    our lives, understanding how to thrive physically, mentally, and socially is essential to shaping a
+                    brighter future for all.</p>
+            </div>
+    </section>
+    <div class="sub">
+        &copy; 2025 Librify. All rights reserved.
+    </div>
+     <script src="{{ url_for('static', filename='js/podcasts.js') }}"></script>
+</body>
+
+</html>

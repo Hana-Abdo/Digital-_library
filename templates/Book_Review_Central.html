@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Review Central _ Podcasts</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+            <h1 class="logo-text">
+                <span>L</span><span>I</span><span>B</span><span>R</span><span>I</span><span>F</span><span>Y</span>
+            </h1>
+        </div>
+        <div class="nav-links">
+            <a href="project.html">Home</a>
+            <!-- <a href="login.html">Login</a> -->
+            <a href="categories.html">Categories</a>
+        </div>
+    </header>
+    <section class="books-section">
+        <h2>Book Review Central</h2>
+        <br><br><br>
+        <div class="seminars-container">
+            <div class="seminar-card">
+               <img src="{{ url_for('static', filename='img/podcasts/Book_Review_Central.jpg') }}" class="seminar-img">
+                <div class="seminar-info">
+                    <h3>🎧 Book Review Central</h3>
+                    <p>Welcome to Literary Award Season</p>
+                    <br>
+                    <audio controls>
+                       <source src="{{ url_for('static', filename='audios/audio2/Book_Review.mp3') }}">
+                    </audio>
+                </div>
+            </div>
+            <div class="interaction-buttons">
+                <button class="likeBtn">Like ❤</button>
+                <button class="commentBtn">Comment 💬</button>
+                <button class="favBtn">Add to Favorites ⭐</button>
+                <button class="playlistBtn">Add to Playlist 🎵</button>
+            </div>
+            <div class="tech">
+                <h2>Summary</h2>
+                <p>In this episode, we explore the world of literary awards and what they really mean. While the season
+                    highlights celebrated authors and works, the hosts emphasize that literature isn’t a
+                    competition—taste is subjective, and artistic value cannot be measured simply by “winners” and
+                    “losers.”</p>
+                <h3>Key Highlights: </h3>
+                <p>• The subjective nature of literary taste and appreciation.</p>
+                <p>• Why awards can celebrate creativity but don’t define artistic value.</p>
+                <p>• How readers can engage with literature beyond accolades and rankings.</p>
+                <p>• Encouragement to explore books for enjoyment, learning, and personal connection.</p>
+                <h3>Main Message: </h3>
+                <p>Literature should be appreciated for its richness and diversity, not judged as a race—awards can
+                    guide us, but true value lies in the reading experience itself.</p>
+            </div>
+    </section>
+    <div class="sub">
+        &copy; 2025 Librify. All rights reserved.
+    </div>
+      <script src="{{ url_for('static', filename='js/podcasts.js') }}"></script>
+</body>
+
+</html>

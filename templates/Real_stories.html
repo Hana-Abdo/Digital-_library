@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Stories _ Podcasts</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+            <h1 class="logo-text">
+                <span>L</span><span>I</span><span>B</span><span>R</span><span>I</span><span>F</span><span>Y</span>
+            </h1>
+        </div>
+        <div class="nav-links">
+            <a href="project.html">Home</a>
+            <!-- <a href="login.html">Login</a> -->
+            <a href="categories.html">Categories</a>
+        </div>
+    </header>
+    <section class="books-section">
+        <h2>Real Stories</h2>
+        <br><br><br>
+        <div class="seminars-container">
+            <div class="seminar-card">
+                 <img src="{{ url_for('static', filename='img/podcasts/Real_Stories.jpg') }}" class="seminar-img">
+                <div class="seminar-info">
+                    <h3>🎧 Real Stories</h3>
+                    <p>Holeman’s Testimony EXPOSES How Badly Delphi Was Investigated</p>
+                    <br>
+                    <audio controls>
+                        <source
+                             src="{{ url_for('static', filename='audios/audio2/Real_Stories.mp3') }}">
+                    </audio>
+                </div>
+            </div>
+            <div class="interaction-buttons">
+                <button class="likeBtn">Like ❤</button>
+                <button class="commentBtn">Comment 💬</button>
+                <button class="favBtn">Add to Favorites ⭐</button>
+                <button class="playlistBtn">Add to Playlist 🎵</button>
+            </div>
+            <div class="tech">
+                <h2>Summary</h2>
+                <p>In this episode, we take a hard, relentless look at Lieutenant Jerry Holeman’s testimony in the
+                    Delphi murders case. The discussion reveals critical insights about the investigation that led to
+                    the conviction of Richard Allen, highlighting missteps, oversights, and the challenges of solving
+                    such a complex case.</p>
+                <h3>Key Highlights: </h3>
+                <p>• Lieutenant Holeman’s firsthand account of the Delphi investigation.</p>
+                <p>• Analysis of procedural errors and investigative shortcomings.</p>
+                <p>• How evidence and testimony shaped the eventual conviction.</p>
+                <p>• Broader reflections on the criminal justice system and accountability.</p>
+                <h3>Main Message: </h3>
+                <p>Holeman’s testimony sheds light on investigative flaws, emphasizing the importance of thorough and
+                    transparent processes in high-profile criminal cases.</p>
+            </div>
+    </section>
+    <div class="sub">
+        &copy; 2025 Librify. All rights reserved.
+    </div>
+       <script src="{{ url_for('static', filename='js/podcasts.js') }}"></script>
+</body>
+
+</html>

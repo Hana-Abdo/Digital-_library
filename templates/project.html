@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookify - Home</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="logo-container">
+      <h1 class="logo-text">
+        <span>l</span><span>i</span><span>b</span><span>r</span><span>I</span><span>f</span><span>Y</span>
+      </h1>
+    </div>
+    <nav class="nav-links">
+    <nav class="nav-links">
+    <a href="{{ url_for('login') }}" class="login-btn">Login</a>
+     <a href="#">Arabic</a>
+    <a href="#" class="mode-btn">☀/🌛</a>
+</nav>
+
+    </nav>
+  </header>
+
+  <section class="main-section">
+    <h1>Welcome to <span class="librify-inline">
+        <span>l</span><span>i</span><span>b</span><span>r</span><span>I</span><span>f</span><span>Y</span>
+      </span></h1>
+    <p class="sub">Explore. Read. Enjoy.</p>
+
+    <div id="about" class="about-box">
+      <h2>About Librify</h2>
+      <p>
+        Librify is your friendly online digital library where stories come to life.
+      </p>
+      <p>Here, you can dive into a huge world full of novels, short stories, podcasts,
+        movie summaries, audiobooks, and more — all in one cozy place.</p>
+      <p>
+        Our mission is to make reading fun, simple, and accessible for everyone.
+        Whether you love mystery, romance, sci-fi, self-help, or comedy…
+        you'll always find something that matches your mood.
+      </p>
+
+
+    </div>
+    <div class="slider">
+      <div class="slides">
+      <img src="{{ url_for('static', filename='img/img/img2/Aladdin_2019.jpeg') }}" alt="Image 1">
+    <img src="{{ url_for('static', filename='img/img/img2/anne_with_an_e.jpeg') }}" alt="Image 2">
+    <img src="{{ url_for('static', filename='img/img/img2/download1.jpeg') }}" alt="Image 3">
+    <img src="{{ url_for('static', filename='img/img/img2/download2.jpeg') }}" alt="Image 4">
+    <img src="{{ url_for('static', filename='img/img/img2/download3.jpeg') }}" alt="Image 5">
+    <img src="{{ url_for('static', filename='img/img/img2/download4.jpeg') }}" alt="Image 6">
+    <img src="{{ url_for('static', filename='img/img/img2/greenmile.jpeg') }}" alt="Image 7">
+    <img src="{{ url_for('static', filename='img/img/img2/prisoners.jpeg') }}" alt="Image 8">
+    <img src="{{ url_for('static', filename='img/img/img2/shutter_island.jpeg') }}" alt="Image 9">
+    <img src="{{ url_for('static', filename='img/img/img2/sweet_tooth_poster.jpeg') }}" alt="Image 10">
+    <img src="{{ url_for('static', filename='img/img/img2/the_dark_knight_2008.jpeg') }}" alt="Image 11">
+    <img src="{{ url_for('static', filename='img/img/img2/the_long_walk_2025.jpeg') }}" alt="Image 12">
+    <img src="{{ url_for('static', filename='img/img/img2/the_maze_runner.jpeg') }}" alt="Image 13">
+    <img src="{{ url_for('static', filename='img/img/img2/jumanji_welcome_2017.jpeg') }}" alt="Image 14">
+    <img src="{{ url_for('static', filename='img/img/img2/twilight.jpeg') }}" alt="Image 15">
+
+      </div>
+    </div>
+
+  </section>
+  <div class="sub">
+    &copy; 2025 Librify. All rights reserved.
+  </div>
+
+</body>
+
+</html>

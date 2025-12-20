@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies - Librify</title>
+
+    <!-- Main Style -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+    <style>
+        /* Search Bar */
+        .search-box {
+            width: 100%;
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .search-box input {
+            width: 60%;
+            padding: 12px;
+            border: 2px solid #555;
+            border-radius: 12px;
+            font-size: 17px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        /* Video Player */
+        #video-player {
+            display: none;
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+        }
+
+        #video-player video {
+            border-radius: 10px;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        #close-btn {
+            margin-top: 15px;
+            padding: 10px 18px;
+            background: #222;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo-text">
+            <span>L</span><span>i</span><span>b</span><span>r</span><span>i</span><span>f</span><span>y</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('categories') }}">Categories</a>
+        </div>
+    </nav>
+
+    <!-- Search -->
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search for a movie...">
+    </div>
+
+    <!-- Main Section -->
+    <section class="books-section">
+        <h2>Movies</h2>
+        <p>Here you will find Movies and recommendations.</p>
+
+        <div class="movies-container">
+
+            {% for movie in movies %}
+            <div class="movie-card"
+                 onclick="showVideo('{{ url_for('static', filename=movie.movie_url)}}', '{{ movie.title }}')">
+
+                <img src="{{ url_for('static', filename=movie.image_url) }}" alt="{{ movie.title }}">
+
+                <h3>{{ movie.title }}</h3>
+                <p>{{ movie.genre }} • ⭐ {{ movie.rating }}</p>
+
+                <div class="interaction-buttons">
+                    <button class="likeBtn">Like ❤</button>
+                    <button class="commentBtn">Comment 💬</button>
+                    <button class="favBtn">Add to Favorites ⭐</button>
+                    <button class="playlistBtn">Add to Playlist 🎵</button>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </section>
+
+    <!-- Video Player -->
+    <div id="video-player">
+        <h2 id="video-title"></h2>
+
+        <video id="movie-video" controls>
+            <source id="video-source" src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <br>
+        <button id="close-btn" onclick="hideVideo()">Close Video</button>
+    </div>
+
+    <!-- Footer -->
+    <div class="sub">
+        &copy; 2025 Librify. All rights reserved.
+    </div>
+
+    <!-- Search Script -->
+    <script>
+        const searchInput = document.getElementById("searchInput");
+        const movies = document.querySelectorAll(".movie-card");
+
+        searchInput.addEventListener("input", () => {
+            const value = searchInput.value.toLowerCase();
+
+            movies.forEach(movie => {
+                const title = movie.querySelector("h3").textContent.toLowerCase();
+                movie.style.display = title.includes(value) ? "block" : "none";
+            });
+        });
+
+        // ==== Video Functions ====
+
+        function showVideo(url, title) {
+            if (!url || url === "#") {
+                alert("This movie is not available.");
+                return;
+            }
+
+            document.getElementById("video-player").style.display = "block";
+            document.getElementById("video-title").innerText = title;
+            document.getElementById("video-source").src = url;
+
+            const video = document.getElementById("movie-video");
+            video.load();
+
+            window.scrollTo({
+                top: document.getElementById("video-player").offsetTop,
+                behavior: 'smooth'
+            });
+        }
+
+        function hideVideo() {
+            document.getElementById("video-player").style.display = "none";
+            document.getElementById("movie-video").pause();
+        }
+    </script>
+
+</body>
+
+</html>

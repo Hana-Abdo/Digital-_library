@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Hub _ Podcasts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+            <h1 class="logo-text">
+                <span>L</span><span>I</span><span>B</span><span>R</span><span>I</span><span>F</span><span>Y</span>
+            </h1>
+        </div>
+        <div class="nav-links">
+            <a href="project.html">Home</a>
+            <!-- <a href="login.html">Login</a> -->
+            <a href="categories.html">Categories</a>
+        </div>
+    </header>
+    <section class="books-section">
+        <h2>Health Hub</h2>
+        <br><br><br>
+        <div class="seminars-container">
+            <div class="seminar-card">
+                <img src="{{ url_for('static', filename='img/podcasts/Health_Hub.jpg') }}" class="seminar-img">
+                <div class="seminar-info">
+                    <h3>🎧 TheHealthHub</h3>
+                    <p>Breathe, Digest, Thrive: The Ayurvedic Path to Long Life with Dr. John Douillard</p>
+                    <br>
+                    <audio controls>
+                        <source src="{{ url_for('static', filename='audios/audio2/health.mp3') }}">
+                    </audio>
+                </div>
+            </div>
+            <div class="interaction-buttons">
+                <button class="likeBtn">Like ❤</button>
+                <button class="commentBtn">Comment 💬</button>
+                <button class="favBtn">Add to Favorites ⭐</button>
+                <button class="playlistBtn">Add to Playlist 🎵</button>
+            </div>
+            <div class="tech">
+                <h2>Summary</h2>
+                <p>In this episode, we explore the ancient wisdom of Ayurveda and its connection to modern longevity,
+                    gut health, and breathwork. Dr. John Douillard, a leading Ayurvedic practitioner, author, and
+                    chiropractor, shares how traditional practices can restore balance, improve digestion, and support
+                    long-term vitality.</p>
+                <h3>Key Highlights: </h3>
+                <p>• How Ayurvedic principles align with modern science on longevity and wellness.</p>
+                <p>• The importance of breath, digestion, and daily rhythms in sustaining health.</p>
+                <p>• Practical insights for improving gut function and boosting energy naturally.</p>
+                <p>• Dr. Douillard’s holistic approach to living longer, healthier, and more intentionally.</p>
+                <h3>Main Message: </h3>
+                <p>Ayurveda offers timeless tools for nourishing the body, calming the mind, and unlocking a path to
+                    lasting health and longevity.</p>
+            </div>
+    </section>
+    <div class="sub">
+        &copy; 2025 Librify. All rights reserved.
+    </div>
+   <script src="{{ url_for('static', filename='js/podcasts.js') }}"></script>
+</body>
+
+</html>

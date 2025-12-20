@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Vibes _ Podcasts</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+            <h1 class="logo-text">
+                <span>L</span><span>I</span><span>B</span><span>R</span><span>I</span><span>F</span><span>Y</span>
+            </h1>
+        </div>
+        <div class="nav-links">
+            <a href="project.html">Home</a>
+            <!-- <a href="login.html">Login</a> -->
+            <a href="categories.html">Categories</a>
+        </div>
+    </header>
+    <section class="books-section">
+        <h2>Art Vibes</h2>
+        <br><br><br>
+        <div class="seminars-container">
+            <div class="seminar-card">
+              <img src="{{ url_for('static', filename='img/podcasts/art_vibes.jpg') }}" class="seminar-img">
+                <div class="seminar-info">
+                    <h3>🎧 Art Vibes</h3>
+                    <p>Seventh Inning Stretch</p>
+                    <br>
+                    <audio controls>
+                        <source   src="{{ url_for('static', filename='audios/audio2/art.mp3') }}">
+                    </audio>
+                </div>
+            </div>
+            <div class="interaction-buttons">
+                <button class="likeBtn">Like ❤</button>
+                <button class="commentBtn">Comment 💬</button>
+                <button class="favBtn">Add to Favorites ⭐</button>
+                <button class="playlistBtn">Add to Playlist 🎵</button>
+            </div>
+            <div class="tech">
+                <h2>Summary</h2>
+                <p>In this episode, we dive into a heartfelt story from the President of Broken Arts Entertainment. Back
+                    in 2001 at then–Safeco Field, during the first game after the All-Star break, he planned a very
+                    public proposal—only to be told it might not be the right moment. What followed was an unexpected
+                    emotional twist that turned an ordinary game night into an unforgettable memory.</p>
+                <h3>Key Highlights: </h3>
+                <p>• The excitement and preparation behind planning a public proposal.</p>
+                <p>• The last-minute warning that changed the entire plan.</p>
+                <p>• The surprising emotional turn that made the night unforgettable.</p>
+                <p>• A reflection on timing, love, and how imperfect moments can become the most meaningful ones.</p>
+                <h3>Main Message: </h3>
+                <p>Sometimes the best stories come from the moments we can’t control—when unexpected twists transform
+                    uncertainty into memories that last a lifetime.</p>
+            </div>
+    </section>
+    <div class="sub">
+        &copy; 2025 Librify. All rights reserved.
+    </div>
+   <script src="{{ url_for('static', filename='js/podcasts.js') }}"></script>
+</body>
+
+</html>

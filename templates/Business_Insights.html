@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Insights _ Podcasts</title>
+  
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+            <h1 class="logo-text">
+                <span>L</span><span>I</span><span>B</span><span>R</span><span>I</span><span>F</span><span>Y</span>
+            </h1>
+        </div>
+        <div class="nav-links">
+            <a href="project.html">Home</a>
+            <!-- <a href="login.html">Login</a> -->
+            <a href="categories.html">Categories</a>
+        </div>
+    </header>
+    <section class="books-section">
+        <h2>Business Insights</h2>
+        <br><br><br>
+        <div class="seminars-container">
+            <div class="seminar-card">
+                <img src="{{ url_for('static', filename='img/podcasts/Business_Insights.jpg') }}" class="seminar-img">
+                <div class="seminar-info">
+                    <h3>🎧 The Cashflow Show: Entrepreneurship Insights for Founders, CEOs and Business Leaders</h3>
+                    <p>Why Savings Confusion Leaves Millions Short-Changing Themselves with Sarah Pennells</p>
+                    <br>
+                    <audio controls>
+                        <source src="{{ url_for('static', filename='audios/audio2/Business.mp3') }}">
+                    </audio>
+                </div>
+            </div>
+            <div class="interaction-buttons">
+                <button class="likeBtn">Like ❤</button>
+                <button class="commentBtn">Comment 💬</button>
+                <button class="favBtn">Add to Favorites ⭐</button>
+                <button class="playlistBtn">Add to Playlist 🎵</button>
+            </div>
+            <div class="tech">
+                <h2>Summary</h2>
+                <p>In this episode, Clayton M. Coke welcomes consumer finance and savings expert Sarah Pennells to
+                    explore why millions of UK entrepreneurs miss out on financial opportunities. Drawing from Royal
+                    London’s recent research, Sarah explains how confusion, risk aversion, and common myths about
+                    investing hold people back.</p>
+                <h3>Key Highlights: </h3>
+                <p>• Understanding ISAs and other savings tools to make money work harder.</p>
+                <p>• Overcoming barriers to saving and investing effectively.</p>
+                <p>• Empowering diverse groups, including women, to invest with confidence.</p>
+                <p>Practical tips to improve financial decision-making and long-term wealth.</p>
+                <h3>Main Message: </h3>
+                <p>Clear knowledge and confident action in savings and investment can help entrepreneurs and business
+                    leaders maximize their financial potential.</p>
+            </div>
+    </section>
+    <div class="sub">
+        &copy; 2025 Librify. All rights reserved.
+    </div>
+    <script src="{{ url_for('static', filename='js/podcasts.js') }}"></script>
+</body>
+
+</html>

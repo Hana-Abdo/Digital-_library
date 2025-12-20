@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Behind The Scenes _ Podcasts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+            <h1 class="logo-text">
+                <span>L</span><span>I</span><span>B</span><span>R</span><span>I</span><span>F</span><span>Y</span>
+            </h1>
+        </div>
+        <div class="nav-links">
+            <a href="project.html">Home</a>
+            <!-- <a href="login.html">Login</a> -->
+            <a href="categories.html">Categories</a>
+        </div>
+       </header>
+    <section class="books-section">
+        <h2>Real Stories</h2>
+        <br><br><br>
+        <div class="seminars-container">
+            <div class="seminar-card">
+                 <img src="{{ url_for('static', filename='img/podcasts/Tech_Behind.jpg') }}" class="seminar-img">
+                <div class="seminar-info">
+                    <h3>🎧 Real Stories</h3>
+                    <p>Holeman’s Testimony EXPOSES How Badly Delphi Was Investigated</p>
+                    <br>
+                    <audio controls>
+                        <source
+                             src="{{ url_for('static', filename='audios/audio2/tech_behind.mp3') }}">
+                    </audio>
+                </div>
+            </div>
+            <div class="interaction-buttons">
+                <button class="likeBtn">Like ❤</button>
+                <button class="commentBtn">Comment 💬</button>
+                <button class="favBtn">Add to Favorites ⭐</button>
+                <button class="playlistBtn">Add to Playlist 🎵</button>
+            </div>
+            <div class="tech">
+                <h2>Summary</h2>
+                <p>In this episode, artist Travis Rice explores how AI is transforming the art world. He explains that
+                    artificial intelligence isn’t replacing artists — instead, it’s becoming a powerful creative tool
+                    that expands what’s possible.</p>
+                <h3>Key Highlights: </h3>
+                <p>• AI helps artists generate ideas faster and explore styles that were difficult or impossible before.
+                </p>
+                <p>• The artist still leads the process: the concept, emotion, and direction come from the human, while
+                    AI supports the execution.</p>
+                <p>• Travis shares his creative workflow, showing how he mixes traditional artistic vision with
+                    AI-driven experimentation.</p>
+                <p>• The episode emphasizes collaboration between human creativity and machine intelligence, not
+                    competition.</p>
+                <h3>Main Message: </h3>
+                <p>AI enhances art, allowing artists to push boundaries and create new forms of expression.</p>
+            </div>
+    </section>
+    <div class="sub">
+        &copy; 2025 Librify. All rights reserved.
+    </div>
+    <script src="{{ url_for('static', filename='js/podcasts.js') }}"></script>
+</body>
+
+</html>

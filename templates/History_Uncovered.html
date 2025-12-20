@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Uncovered _ Podcasts</title>
+ <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+            <h1 class="logo-text">
+                <span>L</span><span>I</span><span>B</span><span>R</span><span>I</span><span>F</span><span>Y</span>
+            </h1>
+        </div>
+        <div class="nav-links">
+            <a href="project.html">Home</a>
+            <!-- <a href="login.html">Login</a> -->
+            <a href="categories.html">Categories</a>
+        </div>
+    </header>
+    <section class="books-section">
+        <h2>History Uncovered</h2>
+        <br><br><br>
+        <div class="seminars-container">
+            <div class="seminar-card">
+                <img src="{{ url_for('static', filename='img/podcasts/History_Uncovered.jpg') }}" class="seminar-img">
+                <div class="seminar-info">
+                    <h3>🎧 Freeman's Challenge</h3>
+                    <p>The Untold Story of America's First Prison-for-Profit – New York Black History 1840-1846</p>
+                    <br>
+                    <audio controls>
+                        <source
+                            src="{{ url_for('static', filename='audios/audio2/history.mp3') }}">
+                    </audio>
+                </div>
+            </div>
+            <div class="interaction-buttons">
+                <button class="likeBtn">Like ❤</button>
+                <button class="commentBtn">Comment 💬</button>
+                <button class="favBtn">Add to Favorites ⭐</button>
+                <button class="playlistBtn">Add to Playlist 🎵</button>
+            </div>
+        </div>
+        <div class="tech">
+            <h2>Summary</h2>
+            <p>In this episode, explore a pivotal yet little-known story in African American history. It follows a
+                15-year-old Black teenager in New York who challenged America’s first prison-for-profit system,
+                revealing the early roots of mass incarceration.</p>
+            <h3>Key Highlights: </h3>
+            <p>• The story sheds light on how profit-driven incarceration began in the United States.</p>
+            <p>• Freeman’s courage exposes systemic injustice at a time when few could fight back.</p>
+            <p>• The episode connects historical events to the ongoing conversation about racial and social justice.</p>
+            <h3>Main Message: </h3>
+            <p>This story shows how bravery and persistence can confront injustice and uncover truths that shape
+                history.</p>
+        </div>
+    </section>
+    <div class="sub">
+        &copy; 2025 Librify. All rights reserved.
+    </div>
+  <script src="{{ url_for('static', filename='js/podcasts.js') }}"></script>
+</body>
+
+</html>

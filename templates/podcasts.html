@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcasts _ Librify</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+        /* Simple Search Bar Styling */
+        .search-box {
+            width: 30%;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .search-box input {
+            width: 60%;
+            padding: 12px;
+            border: 2px solid #555;
+            border-radius: 12px;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .search-box input:focus {
+            border-color: #8b5cf6;
+            box-shadow: 0 0 8px #8b5cf6;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+            <h1 class="logo-text">
+                <span>L</span><span>I</span><span>B</span><span>R</span><span>I</span><span>F</span><span>Y</span>
+            </h1>
+        </div>
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('categories') }}">Categories</a>
+        </div>
+    </header>
+
+    <section class="books-section">
+        <h2>🎧 Podcasts</h2>
+        <p>Enjoy the best podcasts with Librify.</p>
+
+        <!-- Search Bar -->
+        <input type="text" id="searchInput" placeholder="Search podcasts..." class="search-box" />
+
+        <div class="movies-container">
+            {% for p in podcasts %}
+            <div class="movie-card">
+                <a href="{{ url_for('podcast_page', podcast_name=p.podcast_name) }}">
+                    <img src="{{ url_for('static', filename='img/podcasts/' + p.image_name) }}" 
+                         alt="{{ p.podcast_name }}">
+                    <h3>{{ p.podcast_name.replace('_', ' ').title() }}</h3>
+                    <p>Click here to enjoy listening</p>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="sub">
+        &copy; 2025 Librify. All rights reserved.
+    </div>
+
+    <!-- JS Search Script -->
+    <script>
+        const searchInput = document.getElementById("searchInput");
+        const cards = document.querySelectorAll(".movie-card");
+
+        searchInput.addEventListener("keyup", function () {
+            let value = searchInput.value.toLowerCase();
+
+            cards.forEach(card => {
+                let text = card.innerText.toLowerCase();
+
+                if (text.includes(value)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
+    </script>
+    </div>
+            
+</body>
+
+</html>

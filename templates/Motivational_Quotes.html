@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Journey _ Podcasts</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+            <h1 class="logo-text">
+                <span>L</span><span>I</span><span>B</span><span>R</span><span>I</span><span>F</span><span>Y</span>
+            </h1>
+        </div>
+        <div class="nav-links">
+            <a href="project.html">Home</a>
+            <!-- <a href="login.html">Login</a> -->
+            <a href="categories.html">Categories</a>
+        </div>
+    </header>
+    <section class="books-section">
+        <h2>Fitness Journey</h2>
+        <br><br><br>
+        <div class="seminars-container">
+            <div class="seminar-card">
+                 <img src="{{ url_for('static', filename='img/podcasts/Motivational_Quotes.jpg') }}" class="seminar-img">
+                <div class="seminar-info">
+                    <h3>🎧 Integral Recovery: The Journey of Integral Recovery Podcast</h3>
+                    <p>Cleaning Up: What Do We Recover in Recovery?</p>
+                    <br>
+                    <p>Start at 0:30 !</p>
+                    <br>
+                    <audio controls>
+                        <source
+                              src="{{ url_for('static', filename='audios/audio2/motivational.mp3') }}">
+                    </audio>
+                </div>
+            </div>
+            <div class="interaction-buttons">
+                <button class="likeBtn">Like ❤</button>
+                <button class="commentBtn">Comment 💬</button>
+                <button class="favBtn">Add to Favorites ⭐</button>
+                <button class="playlistBtn">Add to Playlist 🎵</button>
+            </div>
+            <div class="tech">
+                <h2>Summary</h2>
+                <p>In this episode, the hosts explore a central question of the recovery journey: What does addiction
+                    take from us, and what do we truly recover? Through honest discussion and integral perspectives,
+                    they unpack the emotional, psychological, spiritual, and relational dimensions of healing.</p>
+                <h3>Key Highlights: </h3>
+                <p>• Understanding the losses caused by addiction and the path to reclaiming them.</p>
+                <p>• How “cleaning up” involves restoring integrity, self-awareness, and inner balance.</p>
+                <p>• The role of relationships, self-compassion, and accountability in long-term recovery.reativity in
+                    art, music, and everyday life.</p>
+                <p>• An integral approach that views recovery as a holistic transformation—not just sobriety.</p>
+                <h3>Main Message: </h3>
+                <p>Recovery is about reclaiming the parts of ourselves that addiction took away, and rebuilding a
+                    healthier, more integrated life.</p>
+            </div>
+    </section>
+    <div class="sub">
+        &copy; 2025 Librify. All rights reserved.
+    </div>
+     <script src="{{ url_for('static', filename='js/podcasts.js') }}"></script>
+</body>
+
+</html>

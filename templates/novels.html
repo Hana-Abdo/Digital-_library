@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Librify - Novels</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f2f5;
+      color: #333;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffffff;
+      color: #333;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .logo-text span {
+      color: #4CAF50;
+      font-weight: bold;
+    }
+
+    .nav-links a {
+      color: #333;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .novels-section {
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .search-box {
+      width: 90%;
+      max-width: 400px;
+      padding: 10px 15px;
+      margin: 20px auto;
+      display: block;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .novel-card {
+      background-color: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+      cursor: default;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .novel-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .novel-card h3 {
+      margin: 0 0 5px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .novel-card h3 a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .novel-card p {
+      margin: 3px 0;
+      font-size: 14px;
+    }
+
+    .interaction-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .interaction-buttons button {
+      padding: 6px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .likeBtn.liked { background-color: #ff6b6b; color: white; }
+    .favBtn.added { background-color: #f39c12; color: white; }
+
+    .sub {
+      text-align: center;
+      padding: 15px;
+      background-color: #ffffff;
+      color: #333;
+      border-top: 1px solid #ddd;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="logo-text">
+      <span>L</span><span>i</span><span>b</span><span>r</span><span>i</span><span>f</span><span>y</span>
+    </div>
+    <div class="nav-links">
+      <a href="/project">Home</a>
+      <a href="/categories">Categories</a>
+    </div>
+  </nav>
+
+  <section class="novels-section">
+    <h2>Novels</h2>
+    <p>Here you will find books and recommendations.</p>
+
+    <input type="text" id="searchInput" class="search-box" placeholder="Search for a book or author...">
+
+    <div class="books-grid">
+      <!-- Card 1 -->
+      <div class="novel-card">
+        <h3><a href="{{ url_for('static', filename='pdf/pdf2/green_smoothie.pdf') }}" target="_blank">Green Smoothie</a></h3>
+        <p><strong>Author:</strong> John Doe</p>
+        <p><strong>Rating:</strong> 4.5 ⭐</p>
+        <p><strong>Reviews:</strong> 20</p>
+        <div class="interaction-buttons">
+          <button class="likeBtn">Like ❤️</button>
+          <button class="commentBtn">Comment 💬</button>
+          <button class="favBtn">Add to Favorites ⭐</button>
+          <button class="playlistBtn">Add to Playlist 🎵</button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="novel-card">
+        <h3><a href="{{ url_for('static', filename='pdf/pdf2/novel.pdf') }}" target="_blank">novel</a></h3>
+        <p><strong>Author:</strong> Stephen King</p>
+        <p><strong>Rating:</strong> 4.6 ⭐</p>
+        <p><strong>Reviews:</strong> 35</p>
+        <div class="interaction-buttons">
+          <button class="likeBtn">Like ❤️</button>
+          <button class="commentBtn">Comment 💬</button>
+          <button class="favBtn">Add to Favorites ⭐</button>
+          <button class="playlistBtn">Add to Playlist 🎵</button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="novel-card">
+        <h3><a href="{{ url_for('static', filename='pdf/pdf2/Signet_Classics.pdf') }}" target="_blank">Signet_Classics</a></h3>
+        <p><strong>Author:</strong> George Orwell</p>
+        <p><strong>Rating:</strong> 4.7 ⭐</p>
+        <p><strong>Reviews:</strong> 10</p>
+        <div class="interaction-buttons">
+          <button class="likeBtn">Like ❤️</button>
+          <button class="commentBtn">Comment 💬</button>
+          <button class="favBtn">Add to Favorites ⭐</button>
+          <button class="playlistBtn">Add to Playlist 🎵</button>
+        </div>
+      </div>
+
+      <!-- كرري نفس الكارد لـ 15 كتاب -->
+      <!-- Card 4 -->
+      <div class="novel-card">
+        <h3><a href="{{ url_for('static', filename='pdf/pdf2/a-wrinkle-in-time.pdf') }}" target="_blank">a-wrinkle-in-time</a></h3>
+        <p><strong>Author:</strong> Madeleine L'Engle</p>
+        <p><strong>Rating:</strong> 4.5 ⭐</p>
+        <p><strong>Reviews:</strong> 20</p>
+        <div class="interaction-buttons">
+          <button class="likeBtn">Like ❤️</button>
+          <button class="commentBtn">Comment 💬</button>
+          <button class="favBtn">Add to Favorites ⭐</button>
+          <button class="playlistBtn">Add to Playlist 🎵</button>
+        </div>
+      </div>
+
+      <div class="novel-card">
+        <h3><a href="{{ url_for('static', filename='pdf/pdf2/awesome_facts.pdf') }}" target="_blank">awesome_facts</a></h3>
+        <p><strong>Author:</strong> National Geographic Kids</p>
+        <p><strong>Rating:</strong> 4.8 ⭐</p>
+        <p><strong>Reviews:</strong> 30</p>
+        <div class="interaction-buttons">
+          <button class="likeBtn">Like ❤️</button>
+          <button class="commentBtn">Comment 💬</button>
+          <button class="favBtn">Add to Favorites ⭐</button>
+          <button class="playlistBtn">Add to Playlist 🎵</button>
+        </div>
+      </div>
+
+<div class="novel-card">
+        <h3><a href="{{ url_for('static', filename='pdf/pdf2/dance_with_dragon.pdf') }}" target="_blank">dance_with_dragon</a></h3>
+        <p><strong>Author:</strong> George R. R. Martin</p>
+        <p><strong>Rating:</strong> 4.7 ⭐</p>
+        <p><strong>Reviews:</strong> 25</p>
+        <div class="interaction-buttons">
+          <button class="likeBtn">Like ❤️</button>
+          <button class="commentBtn">Comment 💬</button>
+          <button class="favBtn">Add to Favorites ⭐</button>
+          <button class="playlistBtn">Add to Playlist 🎵</button>
+        </div>
+      </div>
+
+<div class="novel-card">
+        <h3><a href="{{ url_for('static', filename='pdf/pdf2/Game_of_Thrones.pdf') }}" target="_blank">Game_of_Thrones</a></h3>
+        <p><strong>Author:</strong> George R. R. Martin</p>
+        <p><strong>Rating:</strong> 4.1 ⭐</p>
+        <p><strong>Reviews:</strong> 5</p>
+        <div class="interaction-buttons">
+          <button class="likeBtn">Like ❤️</button>
+          <button class="commentBtn">Comment 💬</button>
+          <button class="favBtn">Add to Favorites ⭐</button>
+          <button class="playlistBtn">Add to Playlist 🎵</button>
+        </div>
+      </div>
+
+<div class="novel-card">
+        <h3><a href="{{ url_for('static', filename='pdf/pdf2/gental_man.pdf') }}" target="_blank">gental_man</a></h3>
+        <p><strong>Author:</strong> Amor Towles</p>
+        <p><strong>Rating:</strong> 4⭐</p>
+        <p><strong>Reviews:</strong> 15</p>
+        <div class="interaction-buttons">
+          <button class="likeBtn">Like ❤️</button>
+          <button class="commentBtn">Comment 💬</button>
+          <button class="favBtn">Add to Favorites ⭐</button>
+          <button class="playlistBtn">Add to Playlist 🎵</button>
+        </div>
+      </div>
+
+<div class="novel-card">
+        <h3><a href="{{ url_for('static', filename='pdf/pdf2/man_called.pdf') }}" target="_blank">man_called</a></h3>
+        <p><strong>Author:</strong> Fredrik Backman</p>
+        <p><strong>Rating:</strong> 4.6⭐</p>
+        <p><strong>Reviews:</strong> 23</p>
+        <div class="interaction-buttons">
+          <button class="likeBtn">Like ❤️</button>
+          <button class="commentBtn">Comment 💬</button>
+          <button class="favBtn">Add to Favorites ⭐</button>
+          <button class="playlistBtn">Add to Playlist 🎵</button>
+        </div>
+      </div>
+
+<div class="novel-card">
+        <h3><a href="{{ url_for('static', filename='pdf/pdf2/patriots_history.pdf') }}" target="_blank">patriots_history</a></h3>
+        <p><strong>Author:</strong> Larry Schweikart</p>
+        <p><strong>Rating:</strong> 4.6⭐</p>
+        <p><strong>Reviews:</strong> 20</p>
+        <div class="interaction-buttons">
+          <button class="likeBtn">Like ❤️</button>
+          <button class="commentBtn">Comment 💬</button>
+          <button class="favBtn">Add to Favorites ⭐</button>
+          <button class="playlistBtn">Add to Playlist 🎵</button>
+        </div>
+      </div>
+
+<div class="novel-card">
+        <h3><a href="{{ url_for('static', filename='pdf/pdf2/rulesforlife.pdf') }}" target="_blank">rulesforlife</a></h3>
+        <p><strong>Author:</strong> Jordan B. Peterson</p>
+        <p><strong>Rating:</strong> 4.4⭐</p>
+        <p><strong>Reviews:</strong> 24</p>
+        <div class="interaction-buttons">
+          <button class="likeBtn">Like ❤️</button>
+          <button class="commentBtn">Comment 💬</button>
+          <button class="favBtn">Add to Favorites ⭐</button>
+          <button class="playlistBtn">Add to Playlist 🎵</button>
+        </div>
+      </div>
+
+<div class="novel-card">
+        <h3><a href="{{ url_for('static', filename='pdf/pdf2/stolen_life.pdf') }}" target="_blank">stolen_life</a></h3>
+        <p><strong>Author:</strong> Jaycee Dugard</p>
+        <p><strong>Rating:</strong> 4.3⭐</p>
+        <p><strong>Reviews:</strong> 32</p>
+        <div class="interaction-buttons">
+          <button class="likeBtn">Like ❤️</button>
+          <button class="commentBtn">Comment 💬</button>
+          <button class="favBtn">Add to Favorites ⭐</button>
+          <button class="playlistBtn">Add to Playlist 🎵</button>
+        </div>
+      </div>
+
+<div class="novel-card">
+        <h3><a href="{{ url_for('static', filename='pdf/pdf2/the_alchemist.pdf') }}" target="_blank">the_alchemist</a></h3>
+        <p><strong>Author:</strong> Jaycee Dugard</p>
+        <p><strong>Rating:</strong> 4.5⭐</p>
+        <p><strong>Reviews:</strong> 30</p>
+        <div class="interaction-buttons">
+          <button class="likeBtn">Like ❤️</button>
+          <button class="commentBtn">Comment 💬</button>
+          <button class="favBtn">Add to Favorites ⭐</button>
+          <button class="playlistBtn">Add to Playlist 🎵</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="sub">
+    &copy; 2025 Librify. All rights reserved.
+  </div>
+
+  <script>
+    // بحث
+    const searchInput = document.getElementById("searchInput");
+    const novels = document.querySelectorAll(".novel-card");
+
+    searchInput.addEventListener("keyup", function () {
+      let value = searchInput.value.toLowerCase();
+      novels.forEach(card => {
+        let bookText = card.innerText.toLowerCase();
+        card.style.display = bookText.includes(value) ? "block" : "none";
+      });
+    });
+
+    // أزرار التفاعل
+    document.querySelectorAll(".interaction-buttons").forEach(section => {
+      const likeBtn = section.querySelector(".likeBtn");
+      const favBtn = section.querySelector(".favBtn");
+      const playlistBtn = section.querySelector(".playlistBtn");
+      const commentBtn = section.querySelector(".commentBtn");
+
+      likeBtn.addEventListener("click", e => {
+        e.stopPropagation();
+        likeBtn.classList.toggle("liked");
+      });
+
+      favBtn.addEventListener("click", e => {
+        e.stopPropagation();
+        favBtn.classList.toggle("added");
+      });
+
+      playlistBtn.addEventListener("click", e => e.stopPropagation());
+      commentBtn.addEventListener("click", e => e.stopPropagation());
+    });
+  </script>
+</body>
+</html>

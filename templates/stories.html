@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Stories - Categories</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+        .search-box {
+            width: 30%;
+            text-align: center;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .search-box input {
+            width: 60%;
+            padding: 12px;
+            border: 2px solid #555;
+            border-radius: 12px;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .search-box input:focus {
+            border-color: #8b5cf6;
+            box-shadow: 0 0 8px #8b5cf6;
+        }
+
+        .row-6 {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(6, 180px);
+            gap: 25px;
+            justify-content: start;
+            margin: 30px 40px;
+        }
+
+        .row-4 {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 180px);
+            gap: 25px;
+            justify-content: start;
+            margin: 20px 40px;
+        }
+
+        /* 🔥 الرسالة الخضراء في النص 🔥 */
+        #positiveMessage {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #4CAF50;
+            color: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            z-index: 9999;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo-container">
+            <h1 class="logo-text">
+                <span>L</span><span>I</span><span>B</span><span>R</span><span>I</span><span>F</span><span>Y</span>
+            </h1>
+        </div>
+
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('categories') }}">Categories</a>
+        </div>
+    </header>
+
+    <section class="books-section">
+        <h2>Our Stories for Kids</h2>
+        <p>Here are the top selected stories for kids available in Librify.</p>
+
+        <input type="text" id="searchInput" placeholder="Search stories..." class="search-box" />
+
+        <div class="row-6">
+            {% for s in stories[:6] %}
+            <div class="movie-card">
+                <a href="{{ url_for('story_page', story_name=s.story_name) }}">
+                    <img src="{{ url_for('static', filename='img/img/kids/' + s.img_name) }}" alt="{{ s.story_name }}">
+                    <h3>{{ s.story_name.replace('_', ' ').title() }}</h3>
+                    <p>Enjoy this magical story!</p>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="row-4">
+            {% for s in stories[6:10] %}
+            <div class="movie-card">
+                <a href="{{ url_for('story_page', story_name=s.story_name) }}">
+                    <img src="{{ url_for('static', filename='img/img/kids/' + s.img_name) }}" alt="{{ s.story_name }}">
+                    <h3>{{ s.story_name.replace('_', ' ').title() }}</h3>
+                    <p>Enjoy this magical story!</p>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+
+    </section>
+
+    <!-- 💚 الرسالة الخضراء -->
+    <div id="positiveMessage">✨ You are amazing! Enjoy the story! ✨</div>
+
+    <script>
+        /* 🔍 Search */
+        const searchInput = document.getElementById("searchInput");
+        const cards = document.querySelectorAll(".movie-card");
+
+        searchInput.addEventListener("keyup", () => {
+            let value = searchInput.value.toLowerCase();
+            cards.forEach(card => {
+                let text = card.innerText.toLowerCase();
+                card.style.display = text.includes(value) ? "block" : "none";
+            });
+        });
+
+        /* 💚 الرسالة الخضراء عند فتح القصة */
+        const images = document.querySelectorAll(".movie-card a img");
+        const msg = document.getElementById("positiveMessage");
+
+        images.forEach(img => {
+            img.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                msg.style.display = "block";
+
+                const link = this.parentElement.href;
+
+                setTimeout(() => {
+                    msg.style.display = "none";
+                    window.location.href = link;
+                }, 1500);
+            });
+        });
+    </script>
+
+</body>
+</html>

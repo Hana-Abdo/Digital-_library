@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Librify - Categories</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo-container">
+            <h1 class="logo-text">
+                <span>L</span><span>I</span><span>B</span><span>R</span><span>I</span><span>F</span><span>Y</span>
+            </h1>
+        </div>
+        <nav class="nav-links">
+          <a href="{{ url_for('home') }}">Home</a>
+
+        </nav>
+    </header>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+       <p class="welcome-msg">Welcome, {{ username }}! Enjoy your time with <span class="bookify-inline">Librify</span></p>
+
+
+        <h2 class="cat-title">Explore Categories</h2>
+
+        <div class="categories-container">
+        <a href="{{ url_for('books') }}" class="category-box">
+                <h3>📚 Books</h3>
+                <p>Novels • Self-help • Mystery</p>
+            </a>
+
+            <a href="{{ url_for('stories') }}" class="category-box">
+                <h3>📖 Children Stories</h3>
+                <p>Short & Long Stories</p>
+            </a>
+
+            <a href="movies.html" class="category-box">
+                <h3>🎞 Movies</h3>
+                <p>Movies • Series • Summaries</p>
+            </a>
+
+            <!-- <a href="music.html" class="category-box">
+                <h3>🎶 Music</h3>
+                <p>Playlists & Relaxing Tracks</p>
+            </a> -->
+
+            <a href="podcasts.html" class="category-box">
+                <h3>🎧 Podcasts</h3>
+                <p>Motivation • Comedy • Talks</p>
+            </a>
+
+            <a href="seminars.html" class="category-box">
+                <h3>🎤 Seminars</h3>
+                <p>Online Talks & Workshops</p>
+            </a>
+
+            <a href="novels.html" class="category-box">
+                <h3>📖 Novels</h3>
+                <p>Fiction & Literature</p>
+            </a>
+        </div>
+        <br><br><br><br><br><br><br><br>
+        <div class="sub">
+            &copy; 2025 Librify. All rights reserved.
+        </div>
+    </section>
+<a href="https://t.me/LibirfyBot" target="_blank" class="chatbot-icon">
+💬
+</a>
+</body>
+
+</html>

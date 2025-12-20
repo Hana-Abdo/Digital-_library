@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Simplified _ Podcasts</title>
+  
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+            <h1 class="logo-text">
+                <span>L</span><span>I</span><span>B</span><span>R</span><span>I</span><span>F</span><span>Y</span>
+            </h1>
+        </div>
+        <div class="nav-links">
+            <a href="project.html">Home</a>
+            <!-- <a href="login.html">Login</a> -->
+            <a href="categories.html">Categories</a>
+        </div>
+    </header>
+    <section class="books-section">
+        <h2>Science Simplified</h2>
+        <br><br><br>
+        <div class="seminars-container">
+            <div class="seminar-card">
+                 <img src="{{ url_for('static', filename='img/podcasts/Science_Slimplified.jpg') }}" class="seminar-img">
+                 
+                <div class="seminar-info">
+                    <h3>🎧 Science Simplified</h3>
+                    <p>The Nature and Evolution of Scientific Inquiry</p>
+                    <br>
+                    <audio controls>
+                        <source
+                            src="{{ url_for('static', filename='audios/audio2/Science_Simplifies.mp3') }}">
+                    </audio>
+                </div>
+            </div>
+            <div class="interaction-buttons">
+                <button class="likeBtn">Like ❤</button>
+                <button class="commentBtn">Comment 💬</button>
+                <button class="favBtn">Add to Favorites ⭐</button>
+                <button class="playlistBtn">Add to Playlist 🎵</button>
+            </div>
+            <div class="tech">
+                <h2>Summary</h2>
+                <p>In this episode, we explore the essence of science and how systematic inquiry has shaped our
+                    understanding of the world. From historical beginnings to modern discoveries, the episode breaks
+                    down key concepts of scientific thinking, including observation, hypothesis, experimentation, and
+                    theory.</p>
+                <h3>Key Highlights: </h3>
+                <p>• Historical milestones in the evolution of scientific thought.</p>
+                <p>• How the scientific method drives discovery and innovation.</p>
+                <p>• Breaking complex ideas into simple, digestible insights.</p>
+                <p>Understanding the impact of science on everyday life and human progress.</p>
+                <h3>Main Message: </h3>
+                <p>• Science is a powerful, evolving method of inquiry that helps us understand the world and continue
+                    to innovate for the future.</p>
+            </div>
+    </section>
+    <div class="sub">
+        &copy; 2025 Librify. All rights reserved.
+    </div>
+    <script src="{{ url_for('static', filename='js/podcasts.js') }}"></script>

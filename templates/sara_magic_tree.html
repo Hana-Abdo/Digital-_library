@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sara and The Magic Tree _ Stories</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+            <h1 class="logo-text">
+                <span>L</span><span>I</span><span>B</span><span>R</span><span>I</span><span>F</span><span>Y</span>
+            </h1>
+        </div>
+        <div class="nav-links">
+            <a href="project.html">Home</a>
+            <!-- <a href="login.html">Login</a> -->
+            <a href="categories.html">Categories</a>
+        </div>
+    </header>
+    <section class="books-section">
+        <h2>Sara and The Magic Tree</h2>
+        <br><br><br>
+        <div class="seminars-container">
+            <div class="seminar-card">
+               <img src="{{ url_for('static', filename='img/img/kids/sara_magic_tree.png') }}" class="seminar-img">
+                <div class="seminar-info">
+                    <h3>Audio For Kids</h3>
+                    <br>
+                    <audio controls>
+                        <source
+                           src="{{ url_for('static', filename='audios/audio1/audio1/sara_magic.mp3') }}">
+                    </audio>
+                </div>
+            </div>
+       <div class="interaction-buttons">
+                <button class="likeBtn">Like ❤</button>
+                <button class="commentBtn">Comment 💬</button>
+                <button class="favBtn">Add to Favorites ⭐</button>
+                <button class="playlistBtn">Add to Playlist 🎵</button>
+            </div>
+            <div class="tech">
+                <h2>Summary</h2>
+                <p>Sara discovers a mysterious tree that grants wishes—but only to those with a kind heart. Through her
+                    adventures, she learns that kindness and courage unlock the real magic within.”</p>
+            </div>
+    </section>
+    <div class="sub">
+        &copy; 2025 Librify. All rights reserved.
+    </div>
+ <script src="{{ url_for('static', filename='js/podcasts.js') }}"></script>
+</body>
+
+</html>
